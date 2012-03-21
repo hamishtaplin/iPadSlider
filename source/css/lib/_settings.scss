@@ -21,7 +21,7 @@ $baseline: 10px;
 $font-size: 14px;
 
 // Debug helpers
-$debug: true;
+$debug: false;
 $debug-grid: griddle; // none, structure, griddle, baseline
 
 // Typography settings
@@ -32,11 +32,11 @@ $body-size: 14px;
 $default-colour: #2f2f2f;
 
 // Links settings
-$links-normal: #806129;
+$links-normal: #333333;
 $links-hover: #2f2f2f;
-$links-active: #806129;
-$links-visited: #806129;
-$links-focus: #806129;
+$links-active: #333333;
+$links-visited: #333333;
+$links-focus: #333333;
 
 // Border settings
 $borders: #cccccc;

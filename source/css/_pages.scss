@@ -1,9 +1,45 @@
-/********************************************
-*
-* Homepage
-*
-********************************************/
+$width: 1024px;
+$height: 768px;
 
-body#home {
-
+html, body {
+  width: $width;
+  height: $height;
+  background: #eeeeee;
+  overflow: hidden;
 }
+
+#slider {
+  position: relative;
+  li {
+    width: $width;
+    height: $height;
+    display: table;
+    border-right: 1px solid #ababab;
+  }
+  h1 {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #ababab;
+    font-family: $sans;
+
+  }
+  .btn {
+    width: 75px;
+    height: 88px;
+    display: block;
+    cursor:pointer;
+    background: url("/images/arrow.png") no-repeat 0 0;
+    position: absolute;
+    top:10px;
+    text-indent: -9999px;
+    &.prev {
+      left: 10px;
+      @include rotate(180deg);
+    }
+    &.next {
+      right: 10px;
+    }
+  }
+}
+

@@ -1,13 +1,7 @@
-%div#container
-  .wrapper
-    %section#cta-list
-      = partial('includes/modules/generic_cta')
-      = partial('includes/modules/generic_cta')
-      = partial('includes/modules/generic_cta')
-    
-    %section#welcome
-      %p
-        = lorem.paragraph
-        this is a
-        %a{:href => '#'}
-          link
+%ul#slider
+  - 5.times do |i|
+
+    %li
+      
+      %h1 Slide #{i}
+        

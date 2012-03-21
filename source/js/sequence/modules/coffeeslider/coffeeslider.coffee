@@ -10,11 +10,13 @@ transition = SEQ.effects.Transition
 
 
 # the main Class
-SEQ modules.CoffeeSlider = class CoffeeSlider      
+SEQ.modules.CoffeeSlider = class CoffeeSlider      
   # Constructor. Creates a CoffeeSlider instance.
 
   constructor: (@options) ->
-    # Intial settings
+    
+    console.log @options
+    # Initial settings
     # --------------
     @settings =
       # type of animation - "slide", "fade" or "slideFade"
@@ -41,6 +43,9 @@ SEQ modules.CoffeeSlider = class CoffeeSlider
       loop: "infinite"                      
       # preloads the images
       preload: true                   
+      # if true, displays debug messages
+      debug: false
+
       # these are the selectors used
       selectors:
         # Coffeeslider uses this selector to define a slide. For example, if your 'slides' are a list, you would enter 'li' here.   
@@ -104,12 +109,14 @@ SEQ modules.CoffeeSlider = class CoffeeSlider
     @pagination = {}
     # dot nav
     @dotNav = {}
-  
+
     @init()
   
   # initialises the class
   init: () =>
     @container = @options.container
+    if @debug
+      console.log("container set to #{@container}")
     @container
       .addClass("coffee-slider")
       .css
@@ -423,6 +430,8 @@ SEQ modules.CoffeeSlider = class CoffeeSlider
     # dont proceed if still moving or attempt to goto the current frame
     # return false if @isMoving or @currentIndex is index  
     @settings.callbacks.onTransition()
+
+    @currentSlide = @slides[index]
 
     if !skipTransition
       @isMoving = true    
